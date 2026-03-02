@@ -43,6 +43,7 @@ export interface Database {
           last_active?: string | null
           journey_stage?: number
         }
+        Relationships: []
       }
       phrases: {
         Row: {
@@ -69,6 +70,7 @@ export interface Database {
           audio_url?: string | null
           created_by?: string | null
         }
+        Relationships: []
       }
       sr_cards: {
         Row: {
@@ -104,6 +106,7 @@ export interface Database {
           times_seen?: number
           times_correct?: number
         }
+        Relationships: []
       }
       scenarios: {
         Row: {
@@ -130,6 +133,7 @@ export interface Database {
           unlock_level?: number
           system_prompt?: string
         }
+        Relationships: []
       }
       session_logs: {
         Row: {
@@ -159,6 +163,7 @@ export interface Database {
           xp_earned?: number
           scenario_played?: string | null
         }
+        Relationships: []
       }
     }
     Views: Record<string, never>

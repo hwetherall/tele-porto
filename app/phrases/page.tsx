@@ -49,8 +49,8 @@ export default function PhrasesPage() {
       .insert({
         english: newEnglish.trim(),
         portuguese: newPortuguese.trim(),
-        category: 'custom',
-        created_by: user ?? undefined,
+        category: 'custom' as const,
+        created_by: user ?? null,
       })
       .select()
       .single()
