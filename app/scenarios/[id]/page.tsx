@@ -5,6 +5,7 @@ import { useRouter, useParams } from 'next/navigation'
 import { useActiveUser } from '@/lib/hooks/useActiveUser'
 import { createClient } from '@/lib/supabase'
 import ChatInterface from '@/components/scenarios/ChatInterface'
+import ErrorBoundary from '@/components/ui/ErrorBoundary'
 import type { Scenario, User } from '@/lib/types'
 
 const XP_PER_SCENARIO = 50
@@ -125,10 +126,12 @@ export default function ScenarioPage() {
 
       {/* Chat */}
       <div className="flex-1 overflow-hidden">
-        <ChatInterface
-          scenario={scenario}
-          onSessionEnd={handleSessionEnd}
-        />
+        <ErrorBoundary>
+          <ChatInterface
+            scenario={scenario}
+            onSessionEnd={handleSessionEnd}
+          />
+        </ErrorBoundary>
       </div>
     </div>
   )

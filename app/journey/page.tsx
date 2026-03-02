@@ -55,7 +55,7 @@ const JOURNEY_STOPS = [
   },
 ]
 
-const WEDDING_DATE = new Date('2025-09-20')
+const WEDDING_DATE = new Date('2026-09-20')
 
 function getDaysToWedding(): number {
   const today = new Date()

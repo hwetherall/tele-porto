@@ -129,11 +129,11 @@ Tasks are ordered by phase. Complete Phase 1 fully before moving to Phase 2. Mar
 ### 5.4 Daily Quest
 - [x] Generate daily quest on home screen based on: weakest SR cards, time since last scenario, Big Five gaps
 - [x] One focused task: "Today: Review 10 household phrases" or "Today: Try the Morning Handover scenario"
-- [ ] Mark complete with XP reward
+- [x] Mark complete with XP reward
 
 ### 5.5 Session Summary Screen
 - [x] After any session: show cards reviewed, accuracy %, XP earned, streak maintained
-- [ ] Highlight any new words that moved to a higher box
+- [x] Highlight any new words that moved to a higher box
 - [x] Encouraging message in Portuguese with English translation
 
 ---
@@ -151,16 +151,16 @@ Tasks are ordered by phase. Complete Phase 1 fully before moving to Phase 2. Mar
 - [x] Gentle competitive framing ("Ky is 50 XP ahead!")
 
 ### 6.3 Pre-Trip Countdown
-- [x] Configurable wedding date (September 2025 — Ericeira)
+- [x] Configurable wedding date (September 2026 — Ericeira)
 - [x] Countdown on home screen: "X days to the wedding"
-- [ ] At <60 days: Wedding Pack gets highlighted, special daily quests focus on wedding scenarios
+- [x] At <60 days: Wedding Pack gets highlighted, special daily quests focus on wedding scenarios
 
 ### 6.4 Final Polish
-- [ ] Loading states on all async operations
-- [ ] Error boundaries on all AI components
-- [ ] Empty states for new users with onboarding nudges
-- [ ] Responsive QA pass on mobile (390px)
-- [ ] Favicon and app metadata
+- [x] Loading states on all async operations
+- [x] Error boundaries on all AI components (ChatInterface, ShadowMode)
+- [x] Empty states for new users with onboarding nudges
+- [x] Responsive QA pass on mobile (390px)
+- [x] Favicon and app metadata (app/icon.svg)
 - [ ] Deploy to Vercel with production env vars
 
 ---

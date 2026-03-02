@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32">
+  <rect width="32" height="32" rx="8" fill="#006600"/>
+  <rect x="11" width="21" height="32" rx="8" fill="#CC0000"/>
+  <rect x="11" width="10" height="32" fill="#CC0000"/>
+  <circle cx="16" cy="16" r="5" fill="#FFD700" stroke="#006600" stroke-width="1"/>
+  <text x="13.5" y="20" font-size="7" font-family="serif" font-weight="bold" fill="#006600">PT</text>
+</svg>

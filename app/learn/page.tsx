@@ -8,6 +8,7 @@ import BoxSystem from '@/components/sr/BoxSystem'
 import ReviewSession from '@/components/sr/ReviewSession'
 import SessionSummary from '@/components/sr/SessionSummary'
 import ShadowMode from '@/components/sr/ShadowMode'
+import ErrorBoundary from '@/components/ui/ErrorBoundary'
 import type { SRCardWithPhrase, User } from '@/lib/types'
 import Link from 'next/link'
 
@@ -241,7 +242,9 @@ export default function LearnPage() {
     const pool = shadowCards.length >= 3 ? shadowCards : allCards.slice(0, 10)
     return (
       <div className="max-w-2xl mx-auto pt-4 pb-24">
-        <ShadowMode cards={pool} onExit={() => setView('dashboard')} />
+        <ErrorBoundary>
+          <ShadowMode cards={pool} onExit={() => setView('dashboard')} />
+        </ErrorBoundary>
       </div>
     )
   }
@@ -335,12 +338,33 @@ export default function LearnPage() {
         </div>
       </div>
 
+      {/* Empty state: new user, no cards yet */}
+      {allCards.length === 0 && (
+        <div className="card border-dashed border-2 border-gray-300 bg-gray-50 text-center py-8 px-4">
+          <div className="text-4xl mb-3">🌱</div>
+          <h3 className="font-bold text-gray-800 mb-1">Your deck is empty</h3>
+          <p className="text-sm text-gray-500 mb-4">
+            Make sure you&apos;ve set up your Supabase database and run the seed script to get your phrase cards.
+          </p>
+          <div className="flex flex-col gap-2 max-w-xs mx-auto">
+            <Link href="/phrases" className="btn-primary text-sm py-2">
+              Add custom phrases →
+            </Link>
+            <Link href="/drill" className="btn-secondary text-sm py-2">
+              Start with verb drills
+            </Link>
+          </div>
+        </div>
+      )}
+
       {/* Box system */}
-      <BoxSystem
-        counts={boxCounts}
-        dueByBox={dueByBox}
-        onStartReview={() => setView('reviewing')}
-      />
+      {allCards.length > 0 && (
+        <BoxSystem
+          counts={boxCounts}
+          dueByBox={dueByBox}
+          onStartReview={() => setView('reviewing')}
+        />
+      )}
 
       {/* Quick links */}
       <div className="grid grid-cols-2 gap-3">
