@@ -5,9 +5,8 @@ import GlobalNav from '@/components/ui/GlobalNav'
 export const metadata: Metadata = {
   title: 'Tele-Porto — Learn Portuguese',
   description: 'Personalised Portuguese learning for Harry and Ky',
-  manifest: '/manifest.json',
   icons: {
-    icon: '/favicon.ico',
+    icon: '/icon.svg',
   },
 }
 
