@@ -1,0 +1,50 @@
+# dependencies
+/node_modules
+/.pnp
+.pnp.js
+
+# testing
+/coverage
+
+# next.js
+/.next/
+/out/
+
+# production
+/build
+
+# misc
+.DS_Store
+*.pem
+
+# debug
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# local env files
+.env*.local
+.env
+.env.local
+# vercel
+.vercel
+
+# typescript
+*.tsbuildinfo
+next-env.d.ts
+
+# Ralph — don't track the framework clone (you use it from WSL)
+ralph-claude-code/
+
+# Ralph runtime/state (keep .ralph config in repo, ignore session & logs)
+.ralph/logs/
+.ralph/*.log
+.ralph/.call_count
+.ralph/.circuit_breaker*
+.ralph/.exit_signals
+.ralph/.last_reset
+.ralph/.loop_start_sha
+.ralph/.ralph_session*
+.ralph/status.json
+.ralph/progress.json
+.ralph/live.log

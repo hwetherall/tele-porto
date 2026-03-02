@@ -1,0 +1,23 @@
+# .ralphrc - Ralph project configuration for Tele-Porto
+# See https://github.com/frankbria/ralph-claude-code — Ralph reads .ralph/PROMPT.md, .ralph/fix_plan.md, .ralph/AGENT.md
+PROJECT_NAME="tele-porto"
+PROJECT_TYPE="typescript"
+
+# Claude Code CLI (use 'npx @anthropic-ai/claude-code' if not installed globally)
+# CLAUDE_CODE_CMD="npx @anthropic-ai/claude-code"
+
+# Loop settings
+MAX_CALLS_PER_HOUR=100
+CLAUDE_TIMEOUT_MINUTES=20
+CLAUDE_OUTPUT_FORMAT="json"
+
+# Tool permissions
+ALLOWED_TOOLS="Write,Read,Edit,Bash(git *),Bash(npm *),Bash(npx *),Bash(curl *)"
+
+# Session management
+SESSION_CONTINUITY=true
+SESSION_EXPIRY_HOURS=24
+
+# Circuit breaker thresholds
+CB_NO_PROGRESS_THRESHOLD=3
+CB_SAME_ERROR_THRESHOLD=5
