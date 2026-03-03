@@ -12,7 +12,7 @@ This file summarises the technical spec for Ralph. Full architecture details are
 | AI/LLM | OpenRouter (claude-sonnet or haiku) |
 | STT | Groq Whisper API |
 | TTS | Browser Web Speech API (pt-BR), fallback ElevenLabs |
-| Auth | None — user switcher (Dom/Ky) in localStorage |
+| Auth | None — user switcher (Harry/Ky) in localStorage |
 
 ## Key Constraints
 
