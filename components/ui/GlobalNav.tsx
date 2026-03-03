@@ -5,6 +5,7 @@ import { usePathname } from 'next/navigation'
 import { useActiveUser } from '@/lib/hooks/useActiveUser'
 
 const navItems = [
+  { href: '/tutor',     label: 'Tutor',     icon: '🎓' },
   { href: '/learn',     label: 'Learn',     icon: '📚' },
   { href: '/drill',     label: 'Drill',     icon: '🎯' },
   { href: '/scenarios', label: 'Scenarios', icon: '🎭' },

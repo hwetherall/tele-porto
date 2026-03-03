@@ -133,3 +133,51 @@ export function getXPForNextLevel(xp: number): { current: number; next: number; 
     needed: LEVEL_THRESHOLDS[nextLevel] - xp,
   }
 }
+
+// ============================================================
+// Tutor types
+// ============================================================
+
+export const XP_PER_TUTOR_LESSON = 50
+export const XP_BONUS_PERFECT = 10
+
+export interface TutorProgress {
+  id: string
+  user_id: string
+  lesson_id: string
+  completed: boolean
+  score: number
+  max_score: number
+  attempts: number
+  last_attempt: string | null
+  xp_earned: number
+}
+
+export interface TutorConceptScore {
+  id: string
+  user_id: string
+  concept_tag: string
+  times_tested: number
+  times_correct: number
+  mastery_pct: number
+  last_updated: string | null
+}
+
+export type MasteryTier = 'struggling' | 'getting-there' | 'solid' | 'mastered'
+
+export function getMasteryTier(pct: number): MasteryTier {
+  if (pct <= 40) return 'struggling'
+  if (pct <= 70) return 'getting-there'
+  if (pct <= 90) return 'solid'
+  return 'mastered'
+}
+
+export function getMasteryBadge(pct: number): string {
+  const tier = getMasteryTier(pct)
+  switch (tier) {
+    case 'struggling': return '\uD83D\uDD34'
+    case 'getting-there': return '\uD83D\uDFE1'
+    case 'solid': return '\uD83D\uDFE2'
+    case 'mastered': return '\u2B50'
+  }
+}

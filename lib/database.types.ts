@@ -165,6 +165,94 @@ export interface Database {
         }
         Relationships: []
       }
+      tutor_lessons: {
+        Row: {
+          id: string
+          title: string
+          lesson_order: number
+          concept_tags: string[]
+          unlocked_by: string | null
+        }
+        Insert: {
+          id: string
+          title: string
+          lesson_order: number
+          concept_tags?: string[]
+          unlocked_by?: string | null
+        }
+        Update: {
+          id?: string
+          title?: string
+          lesson_order?: number
+          concept_tags?: string[]
+          unlocked_by?: string | null
+        }
+        Relationships: []
+      }
+      tutor_progress: {
+        Row: {
+          id: string
+          user_id: string
+          lesson_id: string
+          completed: boolean
+          score: number
+          max_score: number
+          attempts: number
+          last_attempt: string | null
+          xp_earned: number
+        }
+        Insert: {
+          id?: string
+          user_id: string
+          lesson_id: string
+          completed?: boolean
+          score?: number
+          max_score?: number
+          attempts?: number
+          last_attempt?: string | null
+          xp_earned?: number
+        }
+        Update: {
+          id?: string
+          user_id?: string
+          lesson_id?: string
+          completed?: boolean
+          score?: number
+          max_score?: number
+          attempts?: number
+          last_attempt?: string | null
+          xp_earned?: number
+        }
+        Relationships: []
+      }
+      tutor_concept_scores: {
+        Row: {
+          id: string
+          user_id: string
+          concept_tag: string
+          times_tested: number
+          times_correct: number
+          mastery_pct: number
+          last_updated: string | null
+        }
+        Insert: {
+          id?: string
+          user_id: string
+          concept_tag: string
+          times_tested?: number
+          times_correct?: number
+          last_updated?: string | null
+        }
+        Update: {
+          id?: string
+          user_id?: string
+          concept_tag?: string
+          times_tested?: number
+          times_correct?: number
+          last_updated?: string | null
+        }
+        Relationships: []
+      }
     }
     Views: Record<string, never>
     Functions: Record<string, never>

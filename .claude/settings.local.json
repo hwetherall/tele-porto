@@ -6,7 +6,9 @@
       "Bash(ls:*)",
       "Bash(node_modules/.bin/next build:*)",
       "Bash(npx:*)",
-      "Bash(node:*)"
+      "Bash(node:*)",
+      "Bash(./node_modules/.bin/next build:*)",
+      "Bash(npm install:*)"
     ]
   }
 }
